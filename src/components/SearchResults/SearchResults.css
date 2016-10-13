@@ -1,0 +1,16 @@
+article.SearchResult {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d3d3d3;
+  cursor: pointer;
+}
+
+article.SearchResult h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

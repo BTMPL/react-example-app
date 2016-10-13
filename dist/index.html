@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        font-family: Arial;
+        font-size: 14px;
+      }
+
+      .app {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .SearchBox {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+      }
+
+      .SearchResults {
+        flex-grow: 0;
+        max-width: 240px;
+        margin-left: 15px;
+      }
+
+      .Player {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
