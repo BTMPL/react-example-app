@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 
 import styles from "./SearchResults.css";
 
+import { connect } from "react-redux";
+
 class SearchResultsItem extends React.Component {
   render () {
     return <article className={styles.SearchResult} onClick={() => this.props.onClick(this.props.item.id.videoId)}>
@@ -35,4 +37,6 @@ SearchResults.defaultProps = {
   items: []
 };
 
-export default SearchResults;
+export default connect((state) => ({
+  items: state.videos
+}))(SearchResults);

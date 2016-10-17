@@ -2,14 +2,17 @@ import React, { Component } from "react";
 
 import styles from "./SearchBox.css";
 
-export default class SearchBox extends Component {
+import { connect } from "react-redux";
+import { searchForVideo } from "../../actions/videos.js";
+
+class SearchBox extends Component {
 
   constructor(props) {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleQueryChange = this.handleQueryChange.bind(this);
-    
+
     this.state = {
       query: props.query || "",
       submitedQuery: "",
@@ -18,7 +21,7 @@ export default class SearchBox extends Component {
 
   handleSubmit(e) {
     if(this.state.query !== this.state.submitedQuery) {
-      this.props.onSearch(this.state.query);
+      this.props.onSubmit(this.state.query);
       this.setState({
         submitedQuery: this.state.query
       })
@@ -44,3 +47,9 @@ export default class SearchBox extends Component {
     </div>;
   }
 }
+
+const connectedBox = connect((state) => ({}), {
+  onSubmit: searchForVideo
+})(SearchBox);
+
+export default connectedBox;
