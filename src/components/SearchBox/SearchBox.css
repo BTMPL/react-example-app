@@ -10,3 +10,13 @@
   display: block;
   width: 90%;
 }
+
+.SearchBox a {
+  font-size: 32px;
+  float: left;
+  text-decoration: none;
+  position: absolute;
+  left: 0;
+  width: 5%;
+  text-align: center;
+}

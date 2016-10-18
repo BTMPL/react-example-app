@@ -4,9 +4,16 @@
     <meta charset="utf-8" />
     <style>
       * { box-sizing: border-box; }
+
       html, body {
         font-family: Arial;
         font-size: 14px;
+      }
+
+      #root {
+        max-width: 1170px;
+        margin: 0 auto;
+        position: relative;
       }
 
       .app {
@@ -23,14 +30,32 @@
         margin-bottom: 15px;
       }
 
-      .SearchResults {
-        flex-grow: 0;
-        max-width: 240px;
-        margin-left: 15px;
-      }
-
       .Player {
         flex-grow: 1;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .SearchResults {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: center;
+      }
+
+      .Player + .SearchResults {
+        flex-grow: 0;
+        display: block;
+        max-width: 240px;
+      }
+
+      .SearchResults article {
+        max-width: 240px;
+        width: 100%;
+        flex-basis: 100%;
+        margin: auto 15px auto;
       }
     </style>
   </head>

@@ -1,8 +1,5 @@
 import React, { PropTypes } from 'react'
-
 import styles from "./SearchResults.css";
-
-import { connect } from "react-redux";
 
 class SearchResultsItem extends React.Component {
   render () {
@@ -12,8 +9,6 @@ class SearchResultsItem extends React.Component {
     </article>
   }
 }
-
-
 
 class SearchResults extends React.Component {
 
@@ -37,6 +32,4 @@ SearchResults.defaultProps = {
   items: []
 };
 
-export default connect((state) => ({
-  items: state.videos
-}))(SearchResults);
+export default SearchResults;

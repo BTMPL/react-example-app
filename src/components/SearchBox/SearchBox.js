@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router";
 import styles from "./SearchBox.css";
 
-import { connect } from "react-redux";
-import { searchForVideo } from "../../actions/videos.js";
+
 
 class SearchBox extends Component {
 
@@ -38,6 +37,7 @@ class SearchBox extends Component {
   render() {
     return <div className={styles.SearchBox + " SearchBox"}>
       <form action="#" onSubmit={this.handleSubmit}>
+        <Link to="/">🏠</Link>
         <input
           type="text"
           placeholder="Enter a search query to continue ..."
@@ -48,8 +48,4 @@ class SearchBox extends Component {
   }
 }
 
-const connectedBox = connect((state) => ({}), {
-  onSubmit: searchForVideo
-})(SearchBox);
-
-export default connectedBox;
+export default SearchBox;
