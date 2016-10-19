@@ -12,7 +12,7 @@ class HomeRoute extends Component {
 
   constructor(props) {
     super(props);
-    this.playVideo = this.playVideo.bind(this);
+    this.handlePlayback = this.handlePlayback.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
 
@@ -20,7 +20,7 @@ class HomeRoute extends Component {
     this.props.showLatestVideos();
   }
 
-  playVideo(id) {
+  handlePlayback(id) {
     this.props.router.push(`/${id}`);
   }
 
@@ -34,7 +34,7 @@ class HomeRoute extends Component {
       <div className="app">
         <SearchBox onSubmit={this.handleSearch}/>
         {this.props.children}
-        <SearchResults handleClick={this.playVideo} items={this.props.videos}/>
+        <SearchResults onClick={this.handlePlayback} items={this.props.videos}/>
       </div>
     );
   }
