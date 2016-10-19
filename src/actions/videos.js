@@ -10,10 +10,10 @@ export function searchForVideo(query, count = 8) {
         dispatch({
           type: VIDEOS_LOADED,
           payload: response.data ? response.data.items : []
-        })
+        });
       }
-    })
-  }
+    });
+  };
 }
 
 export function showLatestVideos() {

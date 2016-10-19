@@ -25,7 +25,7 @@ class HomeRoute extends Component {
   }
 
   handleSearch(query) {
-    this.props.handleSearch(query);
+    this.props.onSearch(query);
     this.props.router.push(`/`);
   }
 
@@ -36,9 +36,17 @@ class HomeRoute extends Component {
         {this.props.children}
         <SearchResults handleClick={this.playVideo} items={this.props.videos}/>
       </div>
-    )
+    );
   }
 }
+
+HomeRoute.propTypes = {
+  children: React.PropTypes.element,
+  router: React.PropTypes.object,
+  showLatestVideos: React.PropTypes.func,
+  videos: React.PropTypes.array,
+  onSearch: React.PropTypes.func
+};
 
 HomeRoute.contextTypes = {
   router: React.PropTypes.object.isRequired
@@ -47,6 +55,6 @@ HomeRoute.contextTypes = {
 export default withRouter(connect((state) => ({
   videos: state.videos
 }), {
-  handleSearch: searchForVideo,
+  onSearch: searchForVideo,
   showLatestVideos
 })(HomeRoute));

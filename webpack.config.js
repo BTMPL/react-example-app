@@ -1,10 +1,11 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 
 module.exports = {
   entry: "./src/index",
   output: {
     filename: "bundle.js",
+    // eslint-disable-next-line
     path: __dirname + "/dist"
   },
   plugins: [

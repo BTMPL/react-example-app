@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
-import { Router, IndexRoute, Route, hashHistory } from "react-router";
+import { Router, Route, hashHistory } from "react-router";
 
 import { Provider } from "react-redux";
 import store from "./store/index";
 
-import { default as HomeRoute } from "./routes/home.js";
+import { default as HomeRoute } from "./routes/Home.js";
 import Player from "./components/Player";
 
 class App extends Component {

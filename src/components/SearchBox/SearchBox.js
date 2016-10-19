@@ -14,8 +14,8 @@ class SearchBox extends Component {
 
     this.state = {
       query: props.query || "",
-      submitedQuery: "",
-    }
+      submitedQuery: ""
+    };
   }
 
   handleSubmit(e) {
@@ -23,7 +23,7 @@ class SearchBox extends Component {
       this.props.onSubmit(this.state.query);
       this.setState({
         submitedQuery: this.state.query
-      })
+      });
     }
     e.preventDefault();
   }
@@ -35,17 +35,24 @@ class SearchBox extends Component {
   }
 
   render() {
-    return <div className={styles.SearchBox + " SearchBox"}>
-      <form action="#" onSubmit={this.handleSubmit}>
-        <Link to="/">🏠</Link>
-        <input
-          type="text"
-          placeholder="Enter a search query to continue ..."
-          value={this.state.query}
-          onChange={this.handleQueryChange} onBlur={this.handleSubmit} />
-      </form>
-    </div>;
+    return (
+      <div className={styles.SearchBox + " SearchBox"}>
+        <form action="#" onSubmit={this.handleSubmit}>
+          <Link to="/">🏠</Link>
+          <input
+            type="text"
+            placeholder="Enter a search query to continue ..."
+            value={this.state.query}
+            onChange={this.handleQueryChange} onBlur={this.handleSubmit} />
+        </form>
+      </div>
+    );
   }
 }
+
+SearchBox.propTypes = {
+  query: React.PropTypes.string,
+  onSubmit: React.PropTypes.func
+};
 
 export default SearchBox;
