@@ -6,7 +6,7 @@ import React from "react";
 import Player from "./Player.js";
 
 import { expect } from "chai";
-import {  shallow } from "enzyme";
+import { shallow } from "enzyme";
 
 
 describe("<Player />", () => {
@@ -15,5 +15,5 @@ describe("<Player />", () => {
     const wrapper = shallow(<Player />);
     expect(wrapper.find(".Player")).to.have.length(1);
   });
-  
+
 });
