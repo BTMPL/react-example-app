@@ -19,3 +19,13 @@ export function searchForVideo(query, count = 8) {
 export function showLatestVideos() {
   return searchForVideo("reactjs", 10);
 }
+
+/**
+ * we've changed the export method, because we need to export axios object
+ * for unit tests, and this is one of the ways to export the reference
+ * to the object and be able to mock over it later on 
+ */
+
+export default {
+  axios
+};
