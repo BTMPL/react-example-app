@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 
+const WebpackNotifierPlugin = require("webpack-notifier");
+
 module.exports = {
   entry: [
     "webpack-hot-middleware/client",
@@ -14,6 +16,7 @@ module.exports = {
   plugins: [
     new webpack.ResolverPlugin(new DirectoryNamedWebpackPlugin()),
     new webpack.HotModuleReplacementPlugin(),
+    new WebpackNotifierPlugin(),
     new webpack.DefinePlugin({
       // eslint-disable-next-line
       NODE_ENV: '"' + process.env.NODE_ENV + '"'
