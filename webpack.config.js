@@ -2,7 +2,10 @@ const webpack = require("webpack");
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index",
+  entry: [
+    "webpack-hot-middleware/client",
+    "./src/index"
+  ],
   output: {
     filename: "bundle.js",
     // eslint-disable-next-line
@@ -10,6 +13,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ResolverPlugin(new DirectoryNamedWebpackPlugin()),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       // eslint-disable-next-line
       NODE_ENV: '"' + process.env.NODE_ENV + '"'
