@@ -16,11 +16,11 @@ module.exports = {
   plugins: [
     new webpack.ResolverPlugin(new DirectoryNamedWebpackPlugin()),
     new webpack.HotModuleReplacementPlugin(),
-    new WebpackNotifierPlugin(),
     new webpack.DefinePlugin({
       // eslint-disable-next-line
       NODE_ENV: '"' + process.env.NODE_ENV + '"'
-    })
+    }),
+    new WebpackNotifierPlugin()
   ],
   module: {
     loaders: [

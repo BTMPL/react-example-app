@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Router, Route, hashHistory } from "react-router";
+import { Router, Route, browserHistory } from "react-router";
 
 import { Provider } from "react-redux";
 import store from "../../store/index";
@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
           <Route path="/" component={HomeRoute}>
             <Route path="/:video" component={(props) => <Player video={props.params.video} />} />
           </Route>
